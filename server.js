@@ -9,6 +9,11 @@ const dbURL = process.env.MONGODB_URL
 const PORT = process.env.PORT || 4000;
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173", // your frontend dev URL
+  "https://paras-imagify.vercel.app/", // your deployed frontend
+];
+
 app.use(express.json());
 app.use(cors({
   origin: function (origin, callback) {
