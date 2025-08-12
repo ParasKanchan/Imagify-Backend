@@ -5,7 +5,6 @@ import connectDB from './config/mongoDB.js';
 import userRouter from './routes/userRoutes.js';
 import imageRouter from './routes/imageRoutes.js';
 
-const dbURL = process.env.MONGODB_URL
 const PORT = process.env.PORT || 4000;
 const app = express();
 
@@ -23,8 +22,7 @@ app.use(cors({
       callback(new Error("Not allowed by CORS"));
     }
   }
-})); 
-
+}));
 
 (async () => {
   try {
